@@ -1,0 +1,15 @@
+.main{
+    margin:2rem 2rem;
+}
+
+.routerContainer{
+    display: flex;
+    gap:1rem;
+}
+
+.controlContainer, .updateContainer{
+    margin-top: 1rem;
+    display: flex;
+    gap:1rem;
+    align-items: center
+}
