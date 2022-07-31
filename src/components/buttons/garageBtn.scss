@@ -1,4 +1,4 @@
-.btnGarage{
+.btnGarage, .raceBtn, .resetBtn{
     text-transform: uppercase;
     display: inline-block;
     color: black;
@@ -15,11 +15,11 @@
     transition: box-shadow .2s, border-color .2s;
 }
 
-.btnGarage:hover {
+.btnGarage:hover, .raceBtn:hover, .resetBtn:hover {
     box-shadow: inset 0 -1px 1px rgba(0,0,0,0), inset 0 1px 2px rgba(0,0,0,0), inset 0 0 0 60px rgba(255,255,0,.5);
 }
 
-.btnGarage:active {
+.btnGarage:active, .raceBtn:active, .resetBtn:hover {
     padding: calc(.25em + 1px) .5em calc(.25em - 1px);
     border-color: rgba(177,159,0,1);
     box-shadow: inset 0 -1px 1px rgba(0,0,0,.1), inset 0 1px 2px rgba(0,0,0,.3), inset 0 0 0 60px rgba(255,255,0,.45);

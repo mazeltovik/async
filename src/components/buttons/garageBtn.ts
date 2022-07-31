@@ -1,11 +1,9 @@
 import Component from '../../utils/component';
 import './garageBtn.scss';
 export default class GarageBtn extends Component {
-    elem;
     text;
     constructor(...args: [string, string, string[]]) {
         super(...args);
-        this.elem = document.createElement(this.tag);
         this.text = 'To garage';
     }
     render() {

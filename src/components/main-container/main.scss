@@ -7,9 +7,29 @@
     gap:1rem;
 }
 
-.controlContainer, .updateContainer{
+.controlContainer, .updateContainer, .raceContainer{
     margin-top: 1rem;
     display: flex;
     gap:1rem;
     align-items: center
+}
+
+.garageContainer{
+    margin-top: 1rem;
+}
+
+.garageP{
+    text-transform: uppercase;
+    color:white;
+}
+
+.pageP{
+    text-transform: capitalize;
+    color:white;
+    margin-top: 1rem;
+}
+
+.carContainer{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }

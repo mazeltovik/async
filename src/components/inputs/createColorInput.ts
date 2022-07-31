@@ -1,14 +1,14 @@
 import Component from '../../utils/component';
 
 export default class CreateColorInput extends Component {
-    elem;
     type;
     color;
+    id;
     constructor(...args: [string, string, string[]]) {
         super(...args);
-        this.elem = document.createElement(this.tag);
         this.type = 'color';
         this.color = '';
+        this.id = '';
     }
     render() {
         super.render();
@@ -17,7 +17,6 @@ export default class CreateColorInput extends Component {
     eventHandler() {
         this.elem.addEventListener('change', (event) => {
             this.color = (event.target as HTMLInputElement).value;
-            console.log(this.color);
         });
     }
     getColor() {
