@@ -13,7 +13,7 @@ type ResCar = {
 };
 type ResCars = ResCar[];
 
-export default class CreateCar<K, V, Z> extends Component {
+export default class CreateCar<K extends unknown, V extends unknown, Z extends unknown> extends Component {
     text;
     communicationWith;
     constructor(
@@ -31,8 +31,8 @@ export default class CreateCar<K, V, Z> extends Component {
     }
     async createCar() {
         let body = {
-            name: (this.communicationWith[0] as unknown as CreateInput).getName() || 'default Car',
-            color: (this.communicationWith[1] as unknown as CreateColorInput).getColor() || '#fb0404',
+            name: (this.communicationWith[0] as CreateInput).getName() || 'default Car',
+            color: (this.communicationWith[1] as CreateColorInput).getColor() || '#fb0404',
         };
         let res = await fetch('http://127.0.0.1:3000/garage', {
             method: 'POST',
@@ -47,8 +47,10 @@ export default class CreateCar<K, V, Z> extends Component {
             car.render();
             this.main.arrCars.push(car);
             (document.querySelector('.garageContainer') as HTMLDivElement).insertAdjacentElement('beforeend', car.elem);
-            (this.communicationWith[2] as unknown as ParagpraphGarageComponent).amount += 1;
-            (this.communicationWith[2] as unknown as ParagpraphGarageComponent).render();
+            (this.communicationWith[2] as ParagpraphGarageComponent).amount = String(this.main.arrCars.length);
+            (this.communicationWith[2] as ParagpraphGarageComponent).render();
+            ((this.communicationWith[0] as CreateInput).elem as HTMLInputElement).value = '';
+            (this.communicationWith[0] as CreateInput).name = '';
         }
     }
     // renderCars(arr: ResCars) {

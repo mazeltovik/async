@@ -64,7 +64,7 @@ class App {
         //     ['btnCreate']
         // );
         this.raceContainer = new DivComponent('div', SELECTORS.main, ['raceContainer']);
-        this.raceBtn = new RaceBtn('button', SELECTORS.raceContainer, ['raceBtn']);
+
         this.resetBtn = new ResetBtn('button', SELECTORS.raceContainer, ['resetBtn']);
         this.generateBtn = new GenerateBtn('button', SELECTORS.raceContainer, ['btnGen']);
         this.garageContainer = new DivComponent('div', SELECTORS.main, ['garageContainer']);
@@ -74,6 +74,7 @@ class App {
             SELECTORS.body,
             ['main']
         );
+        this.raceBtn = new RaceBtn(this.main, 'button', SELECTORS.raceContainer, ['raceBtn']);
         this.updateBtn = new UpdateBtn<CreateInput, CreateColorInput>(
             this.main,
             [this.updateInput, this.updateColor],
@@ -114,6 +115,7 @@ class App {
         this.main.eventHandler();
         this.main.clickHandler();
         this.garageBtn.eventHandler();
+        this.raceBtn.eventHandler();
         this.createInput.eventHandler();
         this.createColorInput.eventHandler();
         this.createCar.eventHandler();

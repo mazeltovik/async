@@ -8,5 +8,6 @@ const SELECTORS = {
     raceBtn: '.raceBtn',
     garageContainer: '.garageContainer',
     carContainer: '.carContainer',
+    engineBtn: '.engineBtn',
 } as const;
 export default SELECTORS;
